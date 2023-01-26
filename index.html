@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">                                                                                      <!-- ALL LETTER -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">                                      <!-- STANDART PAGES -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">                                                       <!-- COMPATIBILITY WITH EDGE & IE -->
+        <title>Snake</title>                                                                                        <!-- TITLE -->
+        <link rel="icon" href="images/Snake.png">                                                                   <!-- ICON SNAKE HEADER -->
+        <script src="script.js"></script>                                                                           <!-- LINK JS-->
+        <link rel="stylesheet" type="text/css" href="style.css">                                                    <!-- LINK CSS-->
+    </head>
+ 
+    <body>
+
+        <div id="image"><img src="images/Snaketitle.png" width="500px" alt=""></div>                                <!-- IMAGE "SNAKE" -->
+        <iframe src="music/silence.mp3" allow="autoplay" id="audio"></iframe>                                       <!-- TRIGGER AUTOPLAY -->
+        <audio id="player" autoplay loop src="music/SnakeMusic.mp3" type ="audio" style="display: none"></audio>    <!-- LOOP MUSIC GAME -->
+
+        <div id="soundButton">
+            <img src="images/1.png" id="pic_left" width="50px" style="display: none" onclick="swap()">              <!-- IMG SOUND OFF -->
+            <img src="images/0.png" id="pic_right" width="50px" style="display: block" onclick="swap()">            <!-- IMG SOUND ON -->
+        </div>
+
+        <script defer>
+            mute_img = document.getElementById("pic_left");     // ELEMENT "SOUND OFF"
+            play_img = document.getElementById("pic_right");    // ELEMENT "SOUND ON"
+            audio = document.getElementById("player");          // GET BACK THE MUSIC
+
+            audio.volume = 0.2;                                 // MUSIC TO 20%
+    
+            function swap()                                     // SWAP 2 ELEMENT - SAME POSITION
+            {
+                audio = document.getElementById("player");      // GET BACK THE MUSIC
+                if(audio.volume == 0.0)                         // IF 0% MUSIC
+                {
+                    mute_img.style.display = "none";            // HIDE ELEMENT "SOUND OFF"
+                    play_img.style.display = "block";           // SHOW ELEMENT "SOUND ON"
+                    audio.volume = 0.2;                         // MUSIC TO 20%
+                }
+                else
+                {
+                    mute_img.style.display = "block";           // SHOW ELEMENT "SOUND OFF"
+                    play_img.style.display = "none";            // HIDE ELEMENT "SOUND ON"
+                    audio.volume = 0.0;                         // MUSIC TO 0%
+                }
+            }
+        </script>
+    </body>
+</html>

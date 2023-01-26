@@ -1,0 +1,17 @@
+#image
+{
+    margin-bottom: -50px;
+    text-align: center;
+}
+
+#audio
+{
+    display: none;
+}
+
+#soundButton
+{
+    position: absolute;
+    margin-top: -90px;
+    margin-bottom: -50px;
+}
